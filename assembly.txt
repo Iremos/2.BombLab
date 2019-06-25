@@ -1,0 +1,56 @@
+¦¢0x401093 <phase_4>      sub    $0x18,%rsp                                 ¦¢
+   ¦¢0x401097 <phase_4+4>    mov    %fs:0x28,%rax                              ¦¢
+   ¦¢0x4010a0 <phase_4+13>   mov    %rax,0x8(%rsp)                             ¦¢
+   ¦¢0x4010a5 <phase_4+18>   xor    %eax,%eax                                  ¦¢
+   ¦¢0x4010a7 <phase_4+20>   mov    %rsp,%rcx                                  ¦¢
+   ¦¢0x4010aa <phase_4+23>   lea    0x4(%rsp),%rdx                             
+0x4010af <phase_4+28>   mov    $0x402955,%esi                             ¦¢
+   ¦¢0x4010b4 <phase_4+33>   callq  0x400c40 <__isoc99_sscanf@plt>             ¦¢
+   ¦¢0x4010b9 <phase_4+38>   cmp    $0x2,%eax                                  ¦¢
+   ¦¢0x4010bc <phase_4+41>   jne    0x4010c9 <phase_4+54>                      ¦¢
+   ¦¢0x4010be <phase_4+43>   mov    (%rsp),%eax                                ¦¢
+   ¦¢0x4010c1 <phase_4+46>   sub    $0x2,%eax 
+0x4010c4 <phase_4+49>   cmp    $0x2,%eax                                  ¦¢
+   ¦¢0x4010c7 <phase_4+52>   jbe    0x4010ce <phase_4+59>                      ¦¢
+   ¦¢0x4010c9 <phase_4+54>   callq  0x40167c <explode_bomb>                    ¦¢
+   ¦¢0x4010ce <phase_4+59>   mov    (%rsp),%esi                                ¦¢
+   ¦¢0x4010d1 <phase_4+62>   mov    $0x9,%edi                                  ¦¢
+   ¦¢0x4010d6 <phase_4+67>   callq  0x401058 <func4>
+
+0x4010db <phase_4+72>   cmp    0x4(%rsp),%eax                             ¦¢
+   ¦¢0x4010df <phase_4+76>   je     0x4010e6 <phase_4+83>                      ¦¢
+   ¦¢0x4010e1 <phase_4+78>   callq  0x40167c <explode_bomb>                    ¦¢
+   ¦¢0x4010e6 <phase_4+83>   mov    0x8(%rsp),%rax                             ¦¢
+   ¦¢0x4010eb <phase_4+88>   xor    %fs:0x28,%rax                              ¦¢
+   ¦¢0x4010f4 <phase_4+97>   je     0x4010fb <phase_4+104>
+0x4010f6 <phase_4+99>   callq  0x400b90 <__stack_chk_fail@plt>            ¦¢
+   ¦¢0x4010fb <phase_4+104>  add    $0x18,%rsp                                 ¦¢
+   ¦¢0x4010ff <phase_4+108>  retq  
+
+
+
+
+0x401058 <func4>        test   %edi,%edi                                  ¦¢
+   ¦¢0x40105a <func4+2>      jle    0x401087 <func4+47>                        ¦¢
+   ¦¢0x40105c <func4+4>      mov    %esi,%eax                                  ¦¢
+   ¦¢0x40105e <func4+6>      cmp    $0x1,%edi                                  ¦¢
+   ¦¢0x401061 <func4+9>      je     0x401091 <func4+57>                        ¦¢
+   ¦¢0x401063 <func4+11>     push   %r12
+¦¢0x401065 <func4+13>     push   %rbp                                       ¦¢
+   ¦¢0x401066 <func4+14>     push   %rbx                                       ¦¢
+   ¦¢0x401067 <func4+15>     mov    %esi,%ebp                                  ¦¢
+   ¦¢0x401069 <func4+17>     mov    %edi,%ebx                                  ¦¢
+   ¦¢0x40106b <func4+19>     lea    -0x1(%rdi),%edi                            ¦¢
+   ¦¢0x40106e <func4+22>     callq  0x401058 <func4> 
+0x401073 <func4+27>     lea    0x0(%rbp,%rax,1),%r12d                     ¦¢
+   ¦¢0x401078 <func4+32>     lea    -0x2(%rbx),%edi                            ¦¢
+   ¦¢0x40107b <func4+35>     mov    %ebp,%esi                                  ¦¢
+   ¦¢0x40107d <func4+37>     callq  0x401058 <func4>                           ¦¢
+   ¦¢0x401082 <func4+42>     add    %r12d,%eax                                 ¦¢
+   ¦¢0x401085 <func4+45>     jmp    0x40108d <func4+53>
+0x401087 <func4+47>     mov    $0x0,%eax                                  ¦¢
+   ¦¢0x40108c <func4+52>     retq                                              ¦¢
+   ¦¢0x40108d <func4+53>     pop    %rbx                                       ¦¢
+   ¦¢0x40108e <func4+54>     pop    %rbp                                       ¦¢
+   ¦¢0x40108f <func4+55>     pop    %r12                                       ¦¢
+   ¦¢0x401091 <func4+57>     repz retq
